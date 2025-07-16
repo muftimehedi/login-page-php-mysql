@@ -1,10 +1,7 @@
-<?php 
+<?php
 session_start();
-unset($_SESSION["username"]);
-unset($_SESSION["password"]);
+session_unset();
+session_destroy();
 
-echo '<h4>You have cleaned session</h4>';
-header('Refresh: 2; URL = login.php');
-
-
-?>
+header("Location: login.php");
+exit();
